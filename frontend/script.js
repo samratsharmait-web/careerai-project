@@ -1820,4 +1820,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+// ===============================
+// MAKE AUTH FUNCTIONS GLOBAL
+// Required for onclick buttons after hosting
+// ===============================
 
+window.registerUser = registerUser;
+window.loginUser = loginUser;
+window.logoutUser = logoutUser;
+window.toggleSmartPassword = toggleSmartPassword;
+window.handleSmartPasswordInput = handleSmartPasswordInput;
+window.togglePasswordVisibility = togglePasswordVisibility;
