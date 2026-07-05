@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Career AI | CareerAI</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+ <nav>
+    <div class="brand-logo">
+  <img src="logo.png" alt="CareerAI Logo">
+  <h2>CareerAI</h2>
+</div>
+
+  <div>
+    <a href="index.html">Home</a>
+    <a href="analyzer.html">Analyzer</a>
+   <a href="resume.html" class="active-link">Resume Career AI</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="index.html#about">About</a>
+  </div>
+</nav>
+
+<section class="app-screen real-page-screen">
+
+  <div class="screen-header">
+    <a href="dashboard.html" class="back-link">← Back to Dashboard</a>
+    <span class="tag">AI Resume Intelligence</span>
+    <h2>Resume Career AI</h2>
+    <p>Upload or paste your resume. AI will analyze resume strength, shortlisting score, skills, missing keywords, and improvement suggestions.</p>
+  </div>
+
+  <div class="analyzer-layout screen-layout">
+
+    <div class="form-box">
+      <input id="resumeCareerInput" type="text" placeholder="Target Career: Software Engineer">
+      <input id="resumeFileInput" type="file" accept=".pdf,.docx,.txt,.png,.jpg,.jpeg">
+      <textarea id="resumeTextInput" placeholder="Paste your resume text here..."></textarea>
+
+      <textarea id="jobDescriptionInput" placeholder="Optional: Paste job description here..."></textarea>
+
+      <button id="resumeAnalyzeBtn" onclick="analyzeResume()">Analyze Resume</button>
+    </div>
+
+    <div class="history-panel">
+      <div class="history-panel-heading">
+      <h3>Resume Intelligence</h3>
+<p>After analysis, your full resume report will open on a separate result page.</p>
+      </div>
+
+      <div id="resumeHistoryBox" class="history-list">
+  <p>Loading resume history...</p>
+</div>
+    </div>
+
+  </div>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

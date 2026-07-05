@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Analyzer | CareerAI</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+ 
+
+  <nav>
+    <div class="brand-logo">
+  <img src="logo.png" alt="CareerAI Logo">
+  <h2>CareerAI</h2>
+</div>
+    
+
+    <div>
+      <div class="bg-slider-wrap">
+  <input type="range" min="0" max="100" value="50" id="bgBrightnessSlider">
+  <span id="bgPercent">50%</span>
+</div>
+      <a href="index.html">Home</a>
+      <a href="analyzer.html" class="active-link">Analyzer</a>
+      <a href="resume.html">Resume Career AI</a>
+      <a href="index.html#features">Features</a>
+      <a href="index.html#roadmap">Roadmap</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="index.html#about">About</a>
+    </div>
+  </nav>
+
+  <section class="app-screen real-page-screen">
+
+    <div class="screen-header">
+      <a href="index.html" class="back-link">← Back to Home</a>
+
+      <span class="tag">AI Career Analyzer</span>
+
+      <h2>Career Analyzer</h2>
+
+      <p>
+        Enter your career goal, current status, skills, deadline, and daily study hours.
+        The AI will generate a personalized career analysis.
+      </p>
+    </div>
+
+    <div class="analyzer-layout screen-layout">
+
+      <div class="form-box">
+
+        <input
+          id="careerInput"
+          type="text"
+          placeholder="Example: Software Engineer">
+
+        <input
+          id="currentStatusInput"
+          type="text"
+          placeholder="Current Status (Example: B.Tech IT Student)">
+
+        <textarea
+          id="skillInput"
+          placeholder="Enter your current skills: HTML, CSS, JavaScript"></textarea>
+
+        <input
+          id="targetDeadlineInput"
+          type="text"
+          placeholder="Target Deadline (Example: 2 years)">
+
+        <input
+          id="PractiseHoursInput"
+          type="number"
+          placeholder="Daily Work Hours For Goal Achievement (Example: 3)">
+
+        <button onclick="analyzeCareer()">
+          Analyze Career
+        </button>
+
+      </div>
+
+      <div class="history-panel">
+
+        <div class="history-panel-heading">
+          <h3>Recent Career Analysis History</h3>
+          <p>
+            Recent History of career analysis records will appear here.
+          </p>
+        </div>
+
+        <div id="historyBox" class="history-list">
+          <p>Loading career history...</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

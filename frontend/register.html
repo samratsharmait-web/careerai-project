@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | CareerAI</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <section class="modern-auth-page">
+
+    <div class="modern-auth-wrapper register-layout">
+
+      <div class="auth-side-panel">
+        <div class="auth-side-content">
+          <div class="auth-side-logo">
+            <img src="logo.png" alt="CareerAI Logo">
+          </div>
+
+          <h1>Start Your CareerAI Journey</h1>
+
+          <p>
+            Create your account to analyze your career path, improve your resume,
+            track your progress, and receive AI-powered career recommendations.
+          </p>
+
+          <div class="auth-feature-list">
+            <span>Personalized Roadmap</span>
+            <span>Career Readiness Score</span>
+            <span>AI Career Counselor</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="auth-form-panel">
+        <div class="auth-logo">
+          <img src="logo.png" alt="CareerAI Logo">
+        </div>
+
+        <h2>Create Account</h2>
+        <p class="auth-subtitle">Build your personalized career profile.</p>
+
+        <input 
+          type="text" 
+          id="registerName" 
+          placeholder="Full Name" 
+          required
+        >
+
+        <input 
+          type="email" 
+          id="registerEmail" 
+          placeholder="Email Address" 
+          required
+        >
+
+        <div class="password-field">
+          <input type="hidden" id="registerPassword">
+
+          <input 
+            type="text" 
+            id="registerPasswordVisible" 
+            placeholder="Password" 
+            autocomplete="off"
+            required
+            oninput="handleSmartPasswordInput('registerPassword', 'registerPasswordVisible')"
+          >
+
+          <button 
+            type="button" 
+            class="password-toggle"
+            onclick="toggleSmartPassword('registerPassword', 'registerPasswordVisible', this)"
+          >👁️</button>
+        </div>
+
+        <button type="button" onclick="registerUser()">Create Account</button>
+
+        <p class="auth-switch">
+          Already have an account?
+          <a href="login.html">Login here</a>
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

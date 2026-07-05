@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | CareerAI</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <section class="modern-auth-page">
+
+    <div class="modern-auth-wrapper">
+
+      <div class="auth-side-panel">
+        <div class="auth-side-content">
+          <p class="auth-mini-label">AI Career Intelligence Platform</p>
+
+          <div class="auth-side-logo">
+            <img src="logo.png" alt="CareerAI Logo">
+          </div>
+
+          <h1>Unlock Your Career Direction</h1>
+
+          <p>
+            Use AI-powered career analysis, resume intelligence, skill gap detection,
+            and personalized guidance to move toward your professional goals with clarity.
+          </p>
+
+          <div class="auth-feature-list">
+            <span>AI Career Guidance</span>
+            <span>Resume Intelligence</span>
+            <span>Skill Gap Analysis</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="auth-form-panel">
+        <div class="auth-logo">
+          <img src="logo.png" alt="CareerAI Logo">
+        </div>
+
+        <h2>Welcome Back</h2>
+        <p class="auth-subtitle">Login to access your CareerAI dashboard.</p>
+
+        <input 
+          type="email" 
+          id="loginEmail" 
+          placeholder="Email Address"
+          required
+        >
+
+        <div class="password-field">
+          <input type="hidden" id="loginPassword">
+
+          <input 
+            type="text" 
+            id="loginPasswordVisible" 
+            placeholder="Password" 
+            autocomplete="off"
+            required
+            oninput="handleSmartPasswordInput('loginPassword', 'loginPasswordVisible')"
+          >
+
+          <button 
+            type="button" 
+            class="password-toggle"
+            onclick="toggleSmartPassword('loginPassword', 'loginPasswordVisible', this)"
+          >👁️</button>
+        </div>
+
+        <div class="forgot-password-row">
+          <a href="forgot-password.html">Forgot Password?</a>
+        </div>
+
+        <button type="button" onclick="loginUser()">Login</button>
+
+        <p class="auth-switch">
+          New to CareerAI?
+          <a href="register.html">Create account</a>
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

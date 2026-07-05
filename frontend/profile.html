@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile | CareerAI</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <section class="auth-page profile-page">
+    <div class="profile-dashboard-card">
+
+      <div class="profile-top">
+        <div class="profile-logo-box">
+  <img src="logo.png" alt="CareerAI Logo">
+</div>
+
+        <div>
+          <h1>My Profile</h1>
+          <p>Your CareerAI account and report summary.</p>
+        </div>
+      </div>
+
+      <div class="profile-grid">
+        <div class="profile-info-box">
+          <h3>Name</h3>
+          <p id="profileName">Loading...</p>
+        </div>
+
+        <div class="profile-info-box">
+          <h3>Email</h3>
+          <p id="profileEmail">Loading...</p>
+        </div>
+
+        <div class="profile-info-box">
+          <h3>Account Created</h3>
+          <p id="profileCreated">Loading...</p>
+        </div>
+
+        <div class="profile-info-box">
+          <h3>Profile Strength</h3>
+          <p id="profileStrength">Loading...</p>
+        </div>
+      </div>
+
+      <div class="profile-report-grid">
+        <div>
+          <h2 id="profileTotalReports">0</h2>
+          <p>Total Reports</p>
+        </div>
+
+        <div>
+          <h2 id="profileCareerReports">0</h2>
+          <p>Career Reports</p>
+        </div>
+
+        <div>
+          <h2 id="profileResumeReports">0</h2>
+          <p>Resume Reports</p>
+        </div>
+      </div>
+
+      <div class="profile-edit-section">
+        <h2>Edit Profile</h2>
+
+        <input type="text" id="editProfileName" placeholder="Enter new name">
+        <button onclick="updateProfileName()">Update Name</button>
+      </div>
+
+      <div class="profile-edit-section">
+        <h2>Change Password</h2>
+
+        <div class="password-field">
+          <input type="password" id="currentPassword" placeholder="Current Password">
+          <button type="button" class="password-toggle" onclick="togglePasswordVisibility('currentPassword', this)">👁️</button>
+        </div>
+
+        <div class="password-field">
+          <input type="password" id="newPassword" placeholder="New Password">
+          <button type="button" class="password-toggle" onclick="togglePasswordVisibility('newPassword', this)">👁️</button>
+        </div>
+
+        <button onclick="changeUserPassword()">Change Password</button>
+      </div>
+
+      <div class="profile-actions">
+        <button onclick="location.href='dashboard.html'">Go to Dashboard</button>
+        <button class="logout-profile-btn" onclick="logoutUser()">Logout</button>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

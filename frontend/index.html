@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Career Guidance System</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+ 
+
+  <div class="popup-overlay" id="popup">
+    <div class="popup-box">
+      <button class="close-popup" onclick="closePopup()">×</button>
+
+      <span class="popup-tag">Audience Feedback</span>
+
+      <h2>Help Us Improve Your Experience</h2>
+
+      <p class="popup-text">
+        Please let us know how you discovered our AI Career Guidance System.
+        Your response will help us understand our audience and improve the platform experience.
+      </p>
+
+      <div class="review-options">
+        <label><input type="radio" name="source" value="Social Media"> Social Media</label>
+        <label><input type="radio" name="source" value="Public Advertisement"> Public Advertisement</label>
+        <label><input type="radio" name="source" value="Colleagues"> Colleagues</label>
+        <label><input type="radio" name="source" value="Educational Institution"> Educational Institution</label>
+        <label><input type="radio" name="source" value="Professional Seminar"> Professional Seminar</label>
+        <label><input type="radio" name="source" value="Search Engine"> Search Engine</label>
+        <label><input type="radio" name="source" value="Other"> Other</label>
+      </div>
+
+      <div class="popup-buttons">
+        <button onclick="submitPopupReview()">Submit Response</button>
+        <button onclick="closePopup()">Continue to Website</button>
+      </div>
+
+      <label class="dont-show">
+        <input type="checkbox" id="hidePopup">
+        <span>Don't show again</span>
+      </label>
+    </div>
+  </div>
+
+  <nav>
+    <div class="brand-logo">
+  <img src="logo.png" alt="CareerAI Logo">
+  <h2>CareerAI</h2>
+</div>
+
+    <div>
+      <div class="bg-slider-wrap">
+  <input type="range" min="0" max="100" value="50" id="bgBrightnessSlider">
+  <span id="bgPercent">50%</span>
+</div>
+      <a href="#home" class="active-link">Home</a>
+      <a href="#features">Features</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#reviews">Reviews</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="#about">About</a>
+      <div class="home-account-menu account-menu">
+  <div class="home-account-trigger" onclick="toggleAccountDropdown(event)">
+    <span class="home-account-avatar accountInitial">S</span>
+    <span class="accountName">User</span>
+    <span>⌄</span>
+  </div>
+
+  <div class="account-dropdown home-account-dropdown" id="accountDropdown">
+    <div class="account-dropdown-head">
+      <strong class="accountName">User</strong>
+      <p class="accountEmail">user@email.com</p>
+    </div>
+
+    <a href="profile.html">👤 Manage Profile</a>
+    <a href="dashboard.html">📊 Dashboard</a>
+    <button onclick="logoutUser()">🚪 Logout</button>
+  </div>
+</div>
+    </div>
+  </nav>
+
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <span class="tag">AI Powered Career Intelligence Platform</span>
+
+      <h1>Build Your Future With Smart AI Career Guidance</h1>
+
+      <p>
+        A modern AI-powered platform that analyzes career goals, identifies skill gaps,
+        generates intelligent recommendations, and creates a structured roadmap for future success.
+      </p>
+
+   <a href="analyzer.html" class="hero-btn zip-career-btn">
+  <span class="zip-go">GO</span>
+  <span class="zip-teeth"></span>
+  <span class="zip-reveal">START ANALYSIS</span>
+</a>
+
+      
+    </div>
+
+    <div class="hero-visual">
+      <img
+  src="career-ai-dashboard.jpg"
+  alt="AI Career Guidance Dashboard"
+  class="main-ai-img">
+
+      <div class="glass-stat stat-1">
+        <h4>100%</h4>
+        <p>Career Match</p>
+      </div>
+
+      <div class="glass-stat stat-2">
+        <h4>AI</h4>
+        <p>Smart Guidance</p>
+      </div>
+
+      <div class="glass-stat stat-3">
+        <h4>5 Step</h4>
+        <p>Roadmap Plan</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="features">
+    <h2>Advanced Project Features</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>🎯 Career Goal Analysis</h3>
+        <p>Understands the selected career target and identifies the user's future direction.</p>
+      </div>
+
+      <div class="card">
+        <h3>📊 Skill Gap Detection</h3>
+        <p>Compares current skills with industry-required skills for the selected profession.</p>
+      </div>
+
+      <div class="card">
+        <h3>🤖 AI Recommendation</h3>
+        <p>Provides intelligent suggestions and learning recommendations using AI analysis.</p>
+      </div>
+
+      <div class="card">
+        <h3>🚀 Career Roadmap</h3>
+        <p>Generates a personalized roadmap to help users achieve career growth efficiently.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="career-categories">
+    <h2>Explore Career Domains</h2>
+
+    <p class="section-text">
+      Discover multiple professional career domains supported by the AI Career Intelligence System.
+    </p>
+
+    <div class="category-grid">
+      <div class="category-card">
+        <div class="category-icon">💻</div>
+        <h3>Technology Careers</h3>
+        <p>Software Engineer, AI Engineer, Data Scientist, Web Developer, Cyber Security Expert.</p>
+        <span>Skills: Programming, AI, Cloud, Databases</span>
+      </div>
+
+      <div class="category-card">
+        <div class="category-icon">🩺</div>
+        <h3>Medical Careers</h3>
+        <p>Doctor, Surgeon, Pharmacist, Medical Researcher, Healthcare Specialist.</p>
+        <span>Skills: Biology, Patient Care, Communication</span>
+      </div>
+
+      <div class="category-card">
+        <div class="category-icon">⚖️</div>
+        <h3>Law & Government</h3>
+        <p>Lawyer, Judge, Civil Services, Public Administration, Legal Advisor.</p>
+        <span>Skills: Legal Knowledge, Communication</span>
+      </div>
+
+      <div class="category-card">
+        <div class="category-icon">✈️</div>
+        <h3>Aviation Careers</h3>
+        <p>Pilot, Air Traffic Controller, Aviation Management, Aircraft Engineer.</p>
+        <span>Skills: Navigation, Physics, Discipline</span>
+      </div>
+
+      <div class="category-card">
+        <div class="category-icon">🎨</div>
+        <h3>Design Careers</h3>
+        <p>Graphic Designer, UI/UX Designer, Animator, Brand Strategist.</p>
+        <span>Skills: Creativity, UI Design, Branding</span>
+      </div>
+
+      <div class="category-card">
+        <div class="category-icon">📈</div>
+        <h3>Business Careers</h3>
+        <p>Entrepreneur, Financial Analyst, Marketing Manager, Business Consultant.</p>
+        <span>Skills: Leadership, Analytics, Strategy</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="ai-showcase">
+    <h2>AI Based Career Intelligence</h2>
+
+    <p class="section-text">
+      The system combines artificial intelligence, visual analytics,
+      and career tracking to deliver a realistic career guidance experience.
+    </p>
+
+    <div class="showcase-grid">
+      <div class="showcase-card">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Skill Analytics">
+        <h3>Skill Analytics</h3>
+        <p>Advanced graphical skill analysis and progress monitoring dashboard.</p>
+      </div>
+
+      <div class="showcase-card">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="Career Dashboard">
+        <h3>Career Dashboard</h3>
+        <p>Professional visual dashboard for tracking career improvement and growth.</p>
+      </div>
+
+      <div class="showcase-card">
+        <img src="https://images.unsplash.com/photo-1677756119517-756a188d2d94?auto=format&fit=crop&w=800&q=80" alt="AI Recommendation">
+        <h3>AI Recommendation</h3>
+        <p>Smart AI-generated recommendations based on career goals and skill gaps.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="dashboard-preview">
+    <div class="dashboard-text">
+      <h2>Professional Career Intelligence Dashboard</h2>
+
+      <p>
+        The project simulates a realistic AI-powered platform using modern frontend visuals,
+        backend integration, database connectivity, and intelligent recommendation systems.
+      </p>
+    </div>
+
+    <div class="dashboard-box">
+      <div class="dash-top">
+        <div class="mini-stats">
+          <div>
+            <h3>100%</h3>
+            <p>AI Accuracy</p>
+          </div>
+
+          <div>
+            <h3>150+</h3>
+            <p>Career Paths</p>
+          </div>
+
+          <div>
+            <h3>24/7</h3>
+            <p>Smart Guidance</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash-row">
+        <span>Career Match</span>
+        <div class="bar"><div style="width:100%;"></div></div>
+      </div>
+
+      <div class="dash-row">
+        <span>Skill Readiness</span>
+        <div class="bar"><div style="width:75%;"></div></div>
+      </div>
+
+      <div class="dash-row">
+        <span>Roadmap Progress</span>
+        <div class="bar"><div style="width:95%;"></div></div>
+      </div>
+        </div>
+  </section>
+
+  <section id="roadmap" class="roadmap roadmap-premium-final">
+
+  <span class="tag">AI Career Journey</span>
+
+  <h2>Career Roadmap Flow</h2>
+
+  <p class="section-text">
+    A clear step-by-step process showing how the system converts user input into intelligent career guidance.
+  </p>
+
+  <div class="timeline final-timeline">
+
+    <div class="step">
+      <span>01</span>
+      <h3>Select Career Goal</h3>
+      <p>User chooses the dream career target.</p>
+    </div>
+
+    <div class="step">
+      <span>02</span>
+      <h3>Enter Current Skills</h3>
+      <p>User provides skills, status, and timeline.</p>
+    </div>
+
+    <div class="step">
+      <span>03</span>
+      <h3>AI Detects Gaps</h3>
+      <p>AI compares present skills with role requirements.</p>
+    </div>
+
+    <div class="step">
+      <span>04</span>
+      <h3>Generate Roadmap</h3>
+      <p>System creates a personalized growth plan.</p>
+    </div>
+
+    <div class="step">
+      <span>05</span>
+      <h3>Track Improvement</h3>
+      <p>User can review history and improve continuously.</p>
+    </div>
+
+  </div>
+
+</section>
+
+  <section id="reviews" class="features">
+    <h2>Audience Reviews</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>⭐ Student Feedback</h3>
+        <p>“The project provides a realistic AI-based career guidance experience.”</p>
+      </div>
+
+      <div class="card">
+        <h3>🚀 Future Potential</h3>
+        <p>“This platform can become highly powerful with real AI integration.”</p>
+      </div>
+
+      <div class="card">
+        <h3>📊 Smart System</h3>
+        <p>“Professional UI and intelligent roadmap generation make it stand out.”</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about-section">
+    <h2>About CareerAI</h2>
+
+    <div class="profile-card">
+      <img src="samrat.jpeg" alt="Mr. Samrat Sharma" class="profile-img">
+
+      <h3>Mr. Samrat Sharma</h3>
+
+ <p class="about-short-text">
+  CareerAI helps students and professionals make smarter career decisions using AI-powered analysis, resume evaluation, skill gap detection, and personalized career roadmaps.
+</p>
+
+<div class="about-feature-grid">
+  <div class="about-feature-card">
+    <h3>Career Analysis</h3>
+    <p>Analyzes career goals, current skills, readiness score, and future demand.</p>
+  </div>
+
+  <div class="about-feature-card">
+    <h3>Resume Intelligence</h3>
+    <p>Checks resume strength, ATS score, missing skills, and improvement areas.</p>
+  </div>
+
+  <div class="about-feature-card">
+    <h3>AI Career Counselor</h3>
+    <p>Provides personalized guidance based on the user’s latest career and resume data.</p>
+  </div>
+</div>
+
+<div class="about-highlight-box">
+  <h3>Our Vision</h3>
+  <p>
+    To make career guidance more intelligent, personalized, and practical for real-world career growth.
+  </p>
+</div>
+
+</div>
+</section>
+
+<footer class="site-footer">
+  <p>CareerAI | AI-Powered Career Intelligence Platform</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

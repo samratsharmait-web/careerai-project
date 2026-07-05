@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Dashboard | CareerAI</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+ 
+
+<section class="career-dashboard-template">
+
+  <aside class="career-sidebar">
+    <div class="career-brand">
+     <div class="brand-logo">
+  <img src="logo.png" alt="CareerAI Logo">
+</div>
+      <div>
+        <h2>CareerAI</h2>
+        <p>AI Driven Career Guidance</p>
+      </div>
+    </div>
+
+    <div class="career-menu">
+      <a href="dashboard.html" class="active active-link">▣ Dashboard</a>
+      <a href="analyzer.html">▧ Career Analysis</a>
+      <a href="resume.html">▨ Resume Career AI</a>
+      <a href="index.html#roadmap">▤ Roadmap Generator</a>
+      <a href="index.html">⌂ Home</a>
+      <a href="index.html#about">⚙ About</a>
+    </div>
+
+    <div class="career-help-card">
+  <div class="bot-circle">🤖</div>
+  <h3>Need help choosing your career path?</h3>
+  <p>Chat with your AI Career Counselor based on your career and resume reports.</p>
+  <button onclick="openCareerChat()">
+    Chat with AI →
+  </button>
+</div>
+  </aside>
+
+  <main class="career-main">
+
+    <div class="career-topbar">
+
+  <div>
+    <h1>Career Intelligence Dashboard ✨</h1>
+    <p>Your career journey analytics and insights overview</p>
+  </div>
+  <div class="bg-slider-wrap dashboard-slider">
+  <input type="range" min="0" max="100" value="50" id="bgBrightnessSlider">
+  <span id="bgPercent">50%</span>
+</div>
+
+  <div class="career-search dashboard-search-box">
+  <span>⌕</span>
+  <input type="text" id="dashboardSearchInput" placeholder="Search reports, careers, skills, score...">
+  <small>Ctrl + K</small>
+  <div id="dashboardSearchResults" class="dashboard-search-results"></div>
+</div>
+
+ <div class="career-user">
+
+  <div class="bell" id="notificationBell">
+    🔔<span id="notificationCount">0</span>
+    <div id="notificationDropdown" class="notification-dropdown"></div>
+  </div>
+
+  <div class="account-menu">
+    <div class="account-trigger" onclick="toggleAccountDropdown(event)">
+      <div class="avatar accountInitial">S</div>
+
+      <div class="user-info">
+        <strong class="accountName">User</strong>
+        <p>Explorer</p>
+      </div>
+    </div>
+
+    <div class="account-dropdown">
+      <div class="account-dropdown-head">
+        <strong class="accountName">User</strong>
+        <p class="accountEmail">user@email.com</p>
+      </div>
+
+      <a href="profile.html">👤 Manage Profile</a>
+      <a href="dashboard.html">📊 Dashboard</a>
+      <button onclick="logoutUser()">🚪 Logout</button>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+    <div class="career-stat-grid">
+      <div class="career-stat purple">
+        <div>
+          <h4>Total Analyses</h4>
+          <h2 id="totalAnalyses">0</h2>
+          <p id="totalAnalysesBreakdown">0 Career + 0 Resume reports</p>
+        </div>
+        <span>📋</span>
+      </div>
+
+      <div class="career-stat blue">
+        <div>
+          <h4>Average Readiness Score</h4>
+<h2 id="averageScore">0%</h2>
+<p id="averageScoreBreakdown">Career Avg: 0% | Resume Avg: 0%</p>
+        </div>
+        <span>🎯</span>
+      </div>
+
+      <div class="career-stat green">
+        <div>
+          <h4>Highest Score</h4>
+          <h2 id="highestScore">0%</h2>
+          <p id="highestCareer">N/A</p>
+        </div>
+        <span>🏆</span>
+      </div>
+
+      <div class="career-stat orange">
+        <div>
+          <h4>Future Demand</h4>
+          <h2 id="averageFutureDemand">0%</h2>
+          <p id="futureDemandDetail">Highest Demand: N/A</p>
+        </div>
+        <span>🛡️</span>
+      </div>
+
+      <div class="career-stat pink">
+  <div>
+    <h4>Profile Strength</h4>
+    <h2 id="profileStrengthText">No Data</h2>
+    <p id="profileStrengthNote">Based on Career + Resume data</p>
+  </div>
+  <span>✅</span>
+</div>
+    </div>
+
+    <div class="career-chart-grid">
+      <div class="career-panel line-panel">
+        <div class="panel-head">
+          <h3>⌁ Career Score Over Time</h3>
+          <span>Last 30 Days</span>
+        </div>
+
+   <div class="chart-container">
+  <canvas id="careerScoreChart"></canvas>
+</div>
+</div>
+
+      <div class="career-panel risk-panel">
+        <div class="panel-head">
+          <h3>📈 Future Demand Distribution</h3>
+          <span>Demand</span>          
+        </div>
+
+        <div class="risk-content">
+          <div class="donut">
+            <b id="totalAnalysesDonut">0</b>
+            <small>Total</small>
+          </div>
+
+          <div class="risk-list">
+          <div class="risk-row">
+  <div>
+    <span>🟢 High Demand</span>
+    <small id="highDemandCareers">No reports</small>
+  </div>
+  <strong id="highDemand">0</strong>
+</div>
+
+<div class="risk-row">
+  <div>
+    <span>🟠 Medium Demand</span>
+    <small id="mediumDemandCareers">No reports</small>
+  </div>
+  <strong id="mediumDemand">0</strong>
+</div>
+
+<div class="risk-row">
+  <div>
+    <span>🔴 Low Demand</span>
+    <small id="lowDemandCareers">No reports</small>
+  </div>
+  <strong id="lowDemand">0</strong>
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="career-bottom-grid">
+      <div class="career-panel">
+        <div class="panel-head">
+          <h3>Top Career Interests</h3>
+          <span>★</span>
+        </div>
+        <div id="topCareersList" class="career-interest-list">
+          <p>No career data available.</p>
+        </div>
+      </div>
+
+      <div class="career-panel">
+        <div class="panel-head">
+          <h3>Skill Gap Overview</h3>
+          <span>62%</span>
+        </div>
+
+        <div class="skill-circle">
+          <div>
+            <h2>62%</h2>
+            <p>Skills Match</p>
+          </div>
+        </div>
+
+        <div class="skill-legend">
+          <p><span class="green-dot"></span> Matched Skills</p>
+          <p><span class="orange-dot"></span> Missing Skills</p>
+          <p><span class="purple-dot"></span> Other Skills</p>
+        </div>
+      </div>
+
+      <div class="career-panel">
+        <div class="panel-head">
+          <h3>Recent Analyses</h3>
+          <span id="viewAllReportsBtn" onclick="showAllDashboardReports()" style="cursor:pointer;">View All</span>
+        </div>
+
+        <div id="recentAnalysesList" class="recent-list">
+          <p>No recent analysis found.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="career-chat-overlay" id="careerChatOverlay">
+  <div class="career-chat-box">
+
+    <div class="career-chat-header">
+  <div>
+    <h3>🤖 AI Career Counselor</h3>
+    <p>Ask career, roadmap, resume, skill, or interview questions.</p>
+  </div>
+
+  <div class="career-chat-header-actions">
+    <button class="clear-chat-btn" onclick="clearCareerChatHistory()">
+      Clear
+    </button>
+<button class="close-chat-btn" onclick="closeCareerChat()">×</button>
+  </div>
+</div>
+
+    <div class="career-chat-messages" id="careerChatMessages">
+      <div class="bot-message">
+        Hello! I am your AI Career Counselor. Ask me about your career path, skills, resume, projects, roadmap, or interview preparation.
+      </div>
+    </div>
+
+    <div class="career-chat-input-area">
+      <input 
+        type="text" 
+        id="careerChatInput" 
+        placeholder="Ask your career question..."
+        onkeydown="handleCareerChatEnter(event)"
+      >
+
+      <button id="careerChatSendBtn" onclick="sendCareerChat()">
+        Send
+      </button>
+    </div>
+
+  </div>
+</div>
+
+  </main>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
