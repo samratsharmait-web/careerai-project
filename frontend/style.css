@@ -5138,3 +5138,318 @@ body {
   padding: 0;
   font-size: 16px;
 }
+/* =====================================================
+   FINAL RESPONSIVE FIX FOR ALL DEVICES
+   Mobile + tablet + laptop dashboard/pages
+===================================================== */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
+
+/* ---------- TABLET FIX ---------- */
+@media (max-width: 1100px) {
+  .career-dashboard-template {
+    grid-template-columns: 210px 1fr !important;
+  }
+
+  .career-stat-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .career-chart-grid,
+  .career-bottom-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .career-topbar {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dashboard-slider,
+  .career-search,
+  .career-user {
+    grid-column: auto !important;
+    width: 100% !important;
+  }
+
+  .career-user {
+    justify-content: flex-start !important;
+  }
+
+  .result-dashboard-strip,
+  .report-summary-grid,
+  .profile-grid,
+  .profile-report-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+/* ---------- MOBILE FIX ---------- */
+@media (max-width: 768px) {
+  body:has(.career-dashboard-template) {
+    overflow: auto !important;
+  }
+
+  .career-dashboard-template {
+    width: 100% !important;
+    min-height: 100vh !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: visible !important;
+  }
+
+  .career-sidebar {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    padding: 18px 14px !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.18) !important;
+    overflow: visible !important;
+  }
+
+  .career-brand {
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .career-menu {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+
+  .career-menu a {
+    text-align: center !important;
+    font-size: 12px !important;
+    padding: 12px 8px !important;
+  }
+
+  .career-help-card {
+    margin-top: 16px !important;
+    padding: 16px !important;
+  }
+
+  .career-main {
+    width: 100% !important;
+    height: auto !important;
+    padding: 18px 14px 28px !important;
+    overflow: visible !important;
+  }
+
+  .career-topbar {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    text-align: center !important;
+  }
+
+  .career-topbar h1 {
+    font-size: 24px !important;
+  }
+
+  .career-search,
+  .dashboard-slider,
+  .bg-slider-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .career-user {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+  }
+
+  .career-stat-grid,
+  .career-chart-grid,
+  .career-bottom-grid,
+  .next-grid,
+  .result-dashboard-strip,
+  .report-summary-grid,
+  .profile-grid,
+  .profile-report-grid,
+  .profile-actions,
+  .about-feature-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .career-stat {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 105px !important;
+  }
+
+  .career-panel {
+    width: 100% !important;
+    min-height: auto !important;
+    overflow: visible !important;
+  }
+
+  .risk-content {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+  }
+
+  .recent-item,
+  .career-interest-item,
+  .risk-list > div {
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+
+  .modern-auth-page {
+    min-height: 100vh !important;
+    height: auto !important;
+    padding: 24px 16px !important;
+    overflow-y: auto !important;
+  }
+
+  .modern-auth-wrapper {
+    width: 100% !important;
+    min-height: auto !important;
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .auth-side-panel {
+    padding: 16px 0 !important;
+    text-align: center !important;
+  }
+
+  .auth-side-content {
+    max-width: 100% !important;
+  }
+
+  .auth-side-content h1 {
+    font-size: 34px !important;
+  }
+
+  .auth-side-content p {
+    font-size: 14px !important;
+  }
+
+  .auth-feature-list {
+    align-items: center !important;
+  }
+
+  .auth-form-panel {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 28px 22px !important;
+  }
+
+  nav {
+    padding: 16px 5% !important;
+  }
+
+  nav h2 {
+    font-size: 28px !important;
+  }
+
+  nav div {
+    gap: 14px !important;
+  }
+
+  .hero {
+    padding: 60px 6% !important;
+  }
+
+  .hero-text h1 {
+    font-size: 40px !important;
+  }
+
+  .features,
+  .ai-showcase,
+  .dashboard-preview,
+  .roadmap,
+  .about-section,
+  .career-categories,
+  .real-page-screen {
+    padding: 55px 5% !important;
+  }
+
+  .screen-header h2,
+  .features h2,
+  .career-categories h2,
+  .about-section h2,
+  .roadmap h2,
+  .ai-showcase h2 {
+    font-size: 32px !important;
+  }
+
+  .section-text,
+  .screen-header p {
+    font-size: 16px !important;
+  }
+
+  .form-box,
+  .history-panel,
+  .result-card,
+  .profile-dashboard-card {
+    padding: 22px !important;
+  }
+
+  .result-card h2,
+  .premium-result-hero h1 {
+    font-size: 32px !important;
+  }
+
+  .result-navbar {
+    gap: 18px !important;
+    padding: 16px 20px !important;
+  }
+
+  .result-nav-links {
+    gap: 16px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .career-chat-box {
+    width: 96vw !important;
+    height: 88vh !important;
+  }
+
+  .career-chat-input-area {
+    grid-template-columns: 1fr !important;
+  }
+
+  .career-chat-input-area button {
+    width: 100% !important;
+  }
+}
+
+/* ---------- VERY SMALL PHONE FIX ---------- */
+@media (max-width: 430px) {
+  .career-menu {
+    grid-template-columns: 1fr !important;
+  }
+
+  .career-brand h2 {
+    font-size: 21px !important;
+  }
+
+  .career-help-card h3 {
+    font-size: 18px !important;
+  }
+
+  .career-help-card button {
+    font-size: 18px !important;
+  }
+
+  .auth-side-content h1 {
+    font-size: 30px !important;
+  }
+
+  .auth-form-panel h2 {
+    font-size: 28px !important;
+  }
+
+  .hero-text h1 {
+    font-size: 34px !important;
+  }
+}
