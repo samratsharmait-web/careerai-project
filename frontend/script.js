@@ -1820,14 +1820,45 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
 // ===============================
-// MAKE AUTH FUNCTIONS GLOBAL
+// MAKE FUNCTIONS GLOBAL
 // Required for onclick buttons after hosting
 // ===============================
 
 window.registerUser = registerUser;
 window.loginUser = loginUser;
 window.logoutUser = logoutUser;
+
+window.analyzeCareer = analyzeCareer;
+window.analyzeResume = analyzeResume;
+
+window.openDashboardReport = openDashboardReport;
+window.showAllDashboardReports = showAllDashboardReports;
+
+window.openCareerHistoryResult = openCareerHistoryResult;
+window.deleteHistory = deleteHistory;
+window.deleteAllHistory = deleteAllHistory;
+
+window.openResumeHistoryResult = openResumeHistoryResult;
+window.deleteResumeHistory = deleteResumeHistory;
+
+window.toggleNotificationReports = toggleNotificationReports;
+
+window.updateProfileName = updateProfileName;
+window.changeUserPassword = changeUserPassword;
+
+window.toggleAccountDropdown = toggleAccountDropdown;
+
+window.closePopup = closePopup;
+window.submitPopupReview = submitPopupReview;
+
+window.openCareerChat = openCareerChat;
+window.closeCareerChat = closeCareerChat;
+window.handleCareerChatEnter = handleCareerChatEnter;
+window.sendCareerChat = sendCareerChat;
+window.clearCareerChatHistory = clearCareerChatHistory;
+
 window.toggleSmartPassword = toggleSmartPassword;
 window.handleSmartPasswordInput = handleSmartPasswordInput;
 window.togglePasswordVisibility = togglePasswordVisibility;

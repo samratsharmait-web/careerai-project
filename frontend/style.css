@@ -3465,11 +3465,12 @@ footer.site-footer {
 
 
 /* remove ugly default link appearance if old links remain */
+/*
 body > a,
 body > input[type="range"] {
   display: none !important;
 }
-
+*/
 @media (max-width: 800px) {
   .result-navbar {
     flex-direction: column;
